@@ -64,14 +64,10 @@ Build the following routes for the following models:
 
 ## Step 2
  1. Create new routes based on the routes listed above and any more routes that maybe required.
- 1. Create the views for each of these models for CRUD
+ 1. Create the views for each of these models for Create - Read - Update - Delete like todays lesson
 
 ## Step 3
 1. Push some data into the cars and drivers collections
-1. Now create a route that pushes cars`ObjectId` into Company this can be `\company\:companyid\car\add`
-1. Do the same for Driver i.e. the route can be `\drivers\:driverid\car\add`
-1. Create a views page so that you can update Company and push the ObjectId from Car into the particular company it belongs to.  
-i.e.`ModelName.findByIdAndUpdate(id, {$push:{ drivers: driverData}}).then().catch()`  [mongodb push to array](https://docs.mongodb.com/manual/reference/operator/update/push/)
 
 > Do the same for Driver and Car
 
@@ -79,3 +75,26 @@ i.e.`ModelName.findByIdAndUpdate(id, {$push:{ drivers: driverData}}).then().catc
 1. Now when you call the route `/company/:companyid`, display the company and all the drivers and cars belonging to that company
 > `.populate()`
 > Do the same for Driver with Cars.
+
+
+### Extras
+1. Now create a route that pushes cars`ObjectId` into Company this can be `\company\:companyid\car\add`
+1. Do the same for Driver i.e. the route can be `\drivers\:driverid\car\add`
+1. Create a views page so that you can update Company and push the ObjectId from Car into the particular company it belongs to.  
+
+<details>
+<summary>Code FindByIdAndUpdate ID</summary>
+<p>
+
+```js
+
+Driver.findByIdAndUpdate(id, {$push:{ cars: carId }})
+.then(() => {
+  res.redirect('/drivers')
+})
+.catch(err => console.log(err))  
+//[mongodb push to array](https://docs.mongodb.com/manual/reference/operator/update/push/)
+```
+
+</p>
+</details>  
