@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Index of Company</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>Index of Company</h1>
+    <nav>
+      <a href="/companys/new">Create a New Company</a>
+    </nav>
+    <ul>
+    <% companys.forEach((company, index) => { %>
+      <li>
+        <a href="/Companys/<%=index%>"> <%= company.name %></a>
+        <form action="/Companys/<%= index %>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE"/>
+        </form>
+        <a href="/Companys/<%=companys[index]._id%>"> Show</a>
+        <a href="/Companys/<%=companys[index]._id %>/edit">Edit</a>
+      </li>
+    <% }) %>
+    </ul>
+  </body>
+</html>
