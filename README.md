@@ -71,7 +71,7 @@ Build the following routes for the following models:
 1. Now create a route that pushes cars`ObjectId` into Company this can be `\company\:companyid\car\add`
 1. Do the same for Driver i.e. the route can be `\drivers\:driverid\car\add`
 1. Create a views page so that you can update Company and push the ObjectId from Car into the particular company it belongs to.  
-i.e.`$push:{}`  [mongodb push to array](https://docs.mongodb.com/manual/reference/operator/update/push/)
+i.e.`ModelName.findByIdAndUpdate(id, {$push:{ drivers: driverData}}).then().catch()`  [mongodb push to array](https://docs.mongodb.com/manual/reference/operator/update/push/)
 
 > Do the same for Driver and Car
 
