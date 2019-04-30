@@ -59,7 +59,7 @@ Build the following routes for the following models:
  1. Create the routes above
  1. Think about this, One `Company` *can have many* `Cars` and `Drivers`
  1. One `Driver` *can driver many* `Cars`
- 1. Modify your Company, Driver and Car models to accomodate this by referencing `Car`(ObjectId) in `Company` and `Driver` (ObjectId) in `Company`. `(drivers : [{type: Types.Schema.ObjectId, ref: 'Driver'}])`
+ 1. Modify your Company, Driver and Car models to accomodate this by referencing `Car`(ObjectId) in `Company` and `Driver` (ObjectId) in `Company`. `(drivers : [{type: Schema.Types.ObjectId, ref: 'Driver'}])`
  1. One more reference is required please complete this.
 
 ## Step 2
